@@ -7,3 +7,4 @@ Github Pagesを使ってWebサイトを作るためのリポジトリ
 - 好きな音楽について
 - 好きな書籍について
 - 好きなアニメについて
+- [ファビコン](https://magazine.techacademy.jp/magazine/30972)の設定
