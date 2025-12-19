@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ヒット＆ブロー 解析</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .main-content {
+            flex: 2;
+        }
+        .sidebar {
+            flex: 1;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+        }
+        #controls {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        #color-palette {
+            margin-bottom: 15px;
+        }
+        .color-btn {
+            width: 40px;
+            height: 40px;
+            /*border-radius: 50%;
+            border: 2px solid transparent;*/
+            cursor: pointer;
+            margin-right: 5px;
+            background-size: cover;
+        }
+        .color-btn:hover {
+            border-color: #007bff;
+        }
+        #current-selection {
+            display: flex;
+            gap: 10px;
+            min-height: 50px;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .peg {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-size: cover;
+            border: 1px solid #ddd;
+        }
+        #feedback-section {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        #feedback-section input {
+            width: 50px;
+            padding: 8px;
+            font-size: 1em;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        #submit-guess {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #submit-guess:hover {
+            background-color: #218838;
+        }
+        #history {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .history-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        .history-pegs {
+            display: flex;
+            gap: 5px;
+        }
+        .history-peg {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-size: cover;
+        }
+        .history-feedback {
+            margin-left: 15px;
+            font-weight: bold;
+        }
+        #candidates-list {
+            list-style: none;
+            padding: 0;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .candidate-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .candidate-pegs {
+            display: flex;
+            gap: 5px;
+        }
+        .candidate-peg {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            background-size: cover;
+        }
+        .candidate-prob {
+            margin-left: 10px;
+            font-size: 0.9em;
+            color: #555;
+        }
+        /* Peg Colors */
+        .peg-b, .color-b { background-image: url('blue.png'); }
+        .peg-r, .color-r { background-image: url('red.png'); }
+        .peg-g, .color-g { background-image: url('green.png'); }
+        .peg-y, .color-y { background-image: url('yellow.png'); }
+        .peg-p, .color-p { background-image: url('purple.png'); }
+        .peg-w, .color-w { background-image: url('white.png'); }
+
+    </style>
+</head>
+<body>
+
+    <h1>ヒット＆ブロー 解析</h1>
+
+    <div class="container">
+        <div class="main-content">
+            <div id="controls">
+                <h2>あなたの推測</h2>
+                <p>色を4つ選んでください:</p>
+                <div id="color-palette">
+                    <button class="color-btn color-b" data-color="b"></button>
+                    <button class="color-btn color-r" data-color="r"></button>
+                    <button class="color-btn color-g" data-color="g"></button>
+                    <button class="color-btn color-y" data-color="y"></button>
+                    <button class="color-btn color-p" data-color="p"></button>
+                    <button class="color-btn color-w" data-color="w"></button>
+                </div>
+                <div id="current-selection"></div>
+                <div id="feedback-section">
+                    <label for="hits">ヒット:</label>
+                    <input type="number" id="hits" min="0" max="4" value="0">
+                    <label for="blows">ブロー:</label>
+                    <input type="number" id="blows" min="0" max="4" value="0">
+                    <button id="submit-guess">結果を追加</button>
+                    <button id="reset-selection">リセット</button>
+                    <button id="suggest-guess">次の手を提案</button>
+                </div>
+                <div id="suggestion-section" style="margin-top: 20px; display: none;">
+                    <h4>おすすめの次の一手:</h4>
+                    <div id="suggested-guess-pegs" class="history-pegs"></div>
+                </div>
+            </div>
+
+            <div id="history">
+                <h2>履歴</h2>
+                <div id="history-list"></div>
+            </div>
+        </div>
+        <div class="sidebar">
+            <h2>答えの候補</h2>
+            <p>候補数: <span id="candidate-count"></span></p>
+            <ul id="candidates-list"></ul>
+        </div>
+    </div>
+
+    <script src="solver.js"></script>
+
+</body>
+</html>
