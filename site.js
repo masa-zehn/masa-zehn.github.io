@@ -3,14 +3,17 @@
   if (!root) return;
   const nodes = [
     { id:'home', label:'masa-zehn', type:'topic', x:50, y:48 },
-    { id:'solver', label:'Hit & Blow Solver', type:'product', href:'./pages/hit_blow/index.html', x:20, y:23 },
-    { id:'radio', label:'アマチュア無線', type:'note', href:'./pages/ham.html', x:78, y:22 },
-    { id:'bahasa', label:'インドネシア語', type:'note', href:'./pages/languages/bahasa_indonesia/index.html', x:77, y:75 },
-    { id:'info', label:'相互情報量', type:'topic', x:22, y:73 },
-    { id:'engineering', label:'Engineering', type:'topic', x:49, y:13 },
-    { id:'travel', label:'Travel', type:'topic', x:51, y:84 }
+    { id:'products', label:'Products', type:'topic', href:'./products/index.html', x:16, y:17 },
+    { id:'solver', label:'Hit & Blow Solver', type:'product', href:'./products/hit-blow/index.html', x:8, y:48 },
+    { id:'notes', label:'Notes', type:'topic', href:'./notes/index.html', x:48, y:14 },
+    { id:'languages', label:'Languages', type:'topic', href:'./notes/languages/index.html', x:69, y:28 },
+    { id:'bahasa', label:'インドネシア語', type:'note', href:'./notes/languages/indonesian/index.html', x:84, y:49 },
+    { id:'vocabulary', label:'単語と語源', type:'note', href:'./notes/languages/indonesian/vocabulary/index.html', x:72, y:75 },
+    { id:'affixes', label:'接頭辞・接尾辞', type:'note', href:'./notes/languages/indonesian/affixes/index.html', x:92, y:78 },
+    { id:'radio', label:'アマチュア無線', type:'note', href:'./notes/radio/amateur-radio/index.html', x:43, y:80 },
+    { id:'journals', label:'Journals', type:'topic', href:'./journals/index.html', x:17, y:82 }
   ];
-  const edges = [['home','solver'],['home','radio'],['home','bahasa'],['solver','info'],['info','engineering'],['radio','engineering'],['bahasa','travel']];
+  const edges = [['home','products'],['products','solver'],['home','notes'],['notes','languages'],['languages','bahasa'],['bahasa','vocabulary'],['bahasa','affixes'],['notes','radio'],['home','journals']];
   const ns = 'http://www.w3.org/2000/svg';
   const svg = document.createElementNS(ns,'svg');
   svg.setAttribute('aria-hidden','true');

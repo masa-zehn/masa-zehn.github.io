@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="masa-zehn が作ったプロダクトと、工学・言語・アマチュア無線のノート。">
+  <meta name="description" content="masa-zehnが作ったプロダクト、学習ノート、エッセイや日記を公開する個人サイト。">
   <meta name="theme-color" content="#f3f0e8">
-  <title>masa-zehn — sandbox & notes</title>
+  <title>masa-zehn — products, notes & journals</title>
   <link rel="stylesheet" href="./index.css">
   <script src="./site.js" defer></script>
 </head>
@@ -16,7 +16,7 @@
       <span>masa-zehn</span>
     </a>
     <nav class="nav" aria-label="メインナビゲーション">
-      <a href="#works">Works</a><a href="#notes">Notes</a><a href="#map">Map</a>
+      <a href="./products/index.html">Works</a><a href="./notes/index.html">Notes</a><a href="./journals/index.html">Journals</a><a href="#map">Map</a>
       <a class="nav-github" href="https://github.com/masa-zehn">GitHub ↗</a>
     </nav>
   </header>
@@ -37,9 +37,9 @@
     </section>
 
     <section class="section" id="works">
-      <div class="section-heading"><div><p class="eyebrow">01 / PRODUCTS</p><h2>作ったもの</h2></div><p>思いつきを、動く形に。</p></div>
+      <div class="section-heading"><div><p class="eyebrow">01 / PRODUCTS</p><h2>作ったもの</h2></div><p><a class="section-more" href="./products/index.html">Productsを見る →</a></p></div>
       <div class="work-grid">
-        <a class="work-card featured" href="./pages/hit_blow/index.html">
+        <a class="work-card featured" href="./products/hit-blow/index.html">
           <div class="card-top"><span class="tag">WEB APP</span><span class="arrow">↗</span></div>
           <div class="peg-preview" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
           <div><h3>Hit & Blow Solver</h3><p>相互情報量を使って、次の一手を提案する「ヒット＆ブロー」の解析ツール。</p></div>
@@ -49,15 +49,20 @@
     </section>
 
     <section class="section" id="notes">
-      <div class="section-heading"><div><p class="eyebrow">02 / NOTEBOOK</p><h2>ノート</h2></div><p>学んだことと、好きなこと。</p></div>
+      <div class="section-heading"><div><p class="eyebrow">02 / NOTEBOOK</p><h2>ノート</h2></div><p><a class="section-more" href="./notes/index.html">Notesを見る →</a></p></div>
       <div class="note-list">
-        <a class="note-row" href="./pages/ham.html"><span class="note-index">01</span><span class="note-icon">⌁</span><span class="note-title"><strong>アマチュア無線について</strong><small>RADIO · ENGINEERING</small></span><span class="arrow">→</span></a>
-        <a class="note-row" href="./pages/languages/bahasa_indonesia/index.html"><span class="note-index">02</span><span class="note-icon">あ</span><span class="note-title"><strong>インドネシア語について</strong><small>LANGUAGE · TRAVEL</small></span><span class="arrow">→</span></a>
+        <a class="note-row" href="./notes/languages/index.html"><span class="note-index">01</span><span class="note-icon">あ</span><span class="note-title"><strong>言語ノート</strong><small>4 LANGUAGES · VOCABULARY · GRAMMAR</small></span><span class="arrow">→</span></a>
+        <a class="note-row" href="./notes/radio/amateur-radio/index.html"><span class="note-index">02</span><span class="note-icon">⌁</span><span class="note-title"><strong>アマチュア無線について</strong><small>RADIO · ENGINEERING</small></span><span class="arrow">→</span></a>
       </div>
     </section>
 
+    <section class="section" id="journals">
+      <div class="section-heading"><div><p class="eyebrow">03 / JOURNALS</p><h2>文章</h2></div><p><a class="section-more" href="./journals/index.html">Journalsを見る →</a></p></div>
+      <a class="journal-panel" href="./journals/index.html"><div><span>ESSAYS · DIARY · MISCELLANEOUS</span><h3>思いつくままに書いたこと</h3><p>エッセイ、日記、雑記など、学習ノートには収まらない文章を置く場所です。</p></div><b>準備中 <i>→</i></b></a>
+    </section>
+
     <section class="section graph-section" id="map">
-      <div class="section-heading"><div><p class="eyebrow">03 / CONNECTIONS</p><h2>知識の地図</h2></div><p>ノードを選ぶとページを開けます。</p></div>
+      <div class="section-heading"><div><p class="eyebrow">04 / CONNECTIONS</p><h2>サイトの地図</h2></div><p>ノードを選ぶとページを開けます。</p></div>
       <div class="graph-shell">
         <div class="graph-legend"><span><i class="dot product"></i>Product</span><span><i class="dot note"></i>Note</span><span><i class="dot topic"></i>Topic</span></div>
         <div id="knowledge-graph" class="knowledge-graph" role="group" aria-label="ページと話題の関係図"></div>
