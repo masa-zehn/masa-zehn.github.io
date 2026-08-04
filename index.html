@@ -3,68 +3,70 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="masa-zehn が作ったプロダクトと、工学・言語・アマチュア無線のノート。">
-  <meta name="theme-color" content="#f3f0e8">
-  <title>masa-zehn — sandbox & notes</title>
+  <meta name="description" content="masa-zehnが作ったプロダクトと、工学・言語・アマチュア無線のノート。">
+  <meta name="theme-color" content="#090a08">
+  <title>masa-zehn // Products & Notes</title>
   <link rel="stylesheet" href="./index.css">
   <script src="./site.js" defer></script>
 </head>
 <body>
+  <div class="noise" aria-hidden="true"></div>
   <header class="site-header">
-    <a class="brand" href="./index.html" aria-label="ホーム">
-      <span class="brand-mark" aria-hidden="true">mz</span>
-      <span>masa-zehn</span>
-    </a>
-    <nav class="nav" aria-label="メインナビゲーション">
-      <a href="#works">Works</a><a href="#notes">Notes</a><a href="#map">Map</a>
-      <a class="nav-github" href="https://github.com/masa-zehn">GitHub ↗</a>
-    </nav>
+    <a class="brand" href="./index.html"><span class="brand-glyph">MZ</span><span class="brand-copy">MASA-ZEHN<br><small>PERSONAL WEBSITE</small></span></a>
+    <div class="header-status"><i></i><span>SITE ONLINE</span><b>JST / TOKYO</b></div>
+    <nav class="nav" aria-label="メインナビゲーション"><a href="#transmissions">WORKS</a><a href="#archive">NOTES</a><a href="#network">MAP</a><a href="https://github.com/masa-zehn">GITHUB ↗</a></nav>
   </header>
 
   <main>
     <section class="hero">
+      <div class="hero-image" role="img" aria-label="荒廃した都市に建つ、壊れかけの電波塔"></div>
+      <div class="hero-shade"></div>
+      <div class="coord coord-a">35°40'50.2"N<br>139°46'02.1"E</div><div class="coord coord-b">FREQ. 430.000<br>MODE. UNKNOWN</div>
       <div class="hero-copy">
-        <p class="eyebrow">ENGINEERING · RADIO · LANGUAGES</p>
-        <h1>つくって、試して、<br><em>書き留める。</em></h1>
-        <p class="lead">工学を学びながら作った小さなプロダクトと、気になったことのノートを置いている個人的なサンドボックスです。</p>
-        <div class="hero-actions"><a class="button primary" href="#works">作品を見る <span>↓</span></a><a class="button" href="#map">つながりを見る</a></div>
+        <p class="system-line"><span>●</span> PERSONAL WEBSITE / JL1BMC</p>
+        <h1><span>つくったものと、</span><br>書いたこと。</h1>
+        <p class="hero-lead">工学を学びながら作った小さなプロダクトと、<br>気になったことのノートを公開しています。</p>
+        <a class="enter-button" href="#transmissions"><span>作品を見る</span><b>↓</b></a>
       </div>
-      <div class="signal" aria-hidden="true">
-        <div class="signal-grid"></div><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
-        <div class="signal-center"><span>JL1BMC</span><small>ON AIR</small></div>
-        <span class="signal-label label-a">430 MHz</span><span class="signal-label label-b">35.68° N</span>
-      </div>
+      <div class="signal-meter" aria-hidden="true"><span>SIGNAL</span><div><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><b>-87 dBm</b></div>
+      <p class="scroll-mark">SCROLL TO EXPLORE <span>↓</span></p>
     </section>
 
-    <section class="section" id="works">
-      <div class="section-heading"><div><p class="eyebrow">01 / PRODUCTS</p><h2>作ったもの</h2></div><p>思いつきを、動く形に。</p></div>
-      <div class="work-grid">
-        <a class="work-card featured" href="./pages/hit_blow/index.html">
-          <div class="card-top"><span class="tag">WEB APP</span><span class="arrow">↗</span></div>
-          <div class="peg-preview" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-          <div><h3>Hit & Blow Solver</h3><p>相互情報量を使って、次の一手を提案する「ヒット＆ブロー」の解析ツール。</p></div>
+    <div class="ticker" aria-hidden="true"><div>ENGINEERING&nbsp;&nbsp;///&nbsp;&nbsp;AMATEUR RADIO&nbsp;&nbsp;///&nbsp;&nbsp;LANGUAGES&nbsp;&nbsp;///&nbsp;&nbsp;SMALL WEB PROJECTS&nbsp;&nbsp;///&nbsp;&nbsp;ENGINEERING&nbsp;&nbsp;///&nbsp;&nbsp;AMATEUR RADIO&nbsp;&nbsp;///&nbsp;&nbsp;</div></div>
+
+    <section class="transmissions panel-section" id="transmissions">
+      <div class="section-code"><span>01</span><small>PRODUCTS<br>&amp; TOOLS</small></div>
+      <div class="section-main">
+        <div class="section-heading"><div><p>// PRODUCTS</p><h2>WORKS</h2></div><span>1 PROJECT<br>AVAILABLE</span></div>
+        <a class="transmission-card" href="./pages/hit_blow/index.html">
+          <div class="card-monitor"><div class="monitor-grid"></div><div class="code-dots"><i></i><i></i><i></i><i></i></div><span>ENTROPY SCAN<br><b>2.5849 BIT</b></span></div>
+          <div class="card-copy"><p class="file-id">PROJECT: HB-0051 <span>[WEB APP]</span></p><h3>HIT &amp; BLOW<br>SOLVER</h3><p>相互情報量を使って、ヒット＆ブローの次の一手を提案する解析ツールです。</p><dl><div><dt>STATUS</dt><dd>AVAILABLE</dd></div><div><dt>UPDATED</dt><dd>2025.08</dd></div><div><dt>TYPE</dt><dd>TOOL</dd></div></dl></div>
+          <span class="launch">OPEN<br>PROJECT <b>↗</b></span>
         </a>
-        <article class="work-card soon"><div class="card-top"><span class="tag">NEXT</span><span class="muted">制作メモ</span></div><div class="code-motif" aria-hidden="true">⌁</div><div><h3>次の実験</h3><p>二次元コード、リサージュ曲線などの小さな道具を準備中です。</p></div></article>
       </div>
     </section>
 
-    <section class="section" id="notes">
-      <div class="section-heading"><div><p class="eyebrow">02 / NOTEBOOK</p><h2>ノート</h2></div><p>学んだことと、好きなこと。</p></div>
-      <div class="note-list">
-        <a class="note-row" href="./pages/ham.html"><span class="note-index">01</span><span class="note-icon">⌁</span><span class="note-title"><strong>アマチュア無線について</strong><small>RADIO · ENGINEERING</small></span><span class="arrow">→</span></a>
-        <a class="note-row" href="./pages/languages/bahasa_indonesia/index.html"><span class="note-index">02</span><span class="note-icon">あ</span><span class="note-title"><strong>インドネシア語について</strong><small>LANGUAGE · TRAVEL</small></span><span class="arrow">→</span></a>
+    <section class="archive panel-section" id="archive">
+      <div class="section-code"><span>02</span><small>ARTICLES<br>&amp; NOTES</small></div>
+      <div class="section-main">
+        <div class="section-heading"><div><p>// NOTEBOOK</p><h2>NOTES</h2></div><span>2 ARTICLES<br>AVAILABLE</span></div>
+        <div class="archive-list">
+          <a href="./pages/ham.html"><span class="record-num">NOTE_001</span><span class="record-icon">⌁</span><span class="record-title"><small>RADIO / ENGINEERING</small><strong>アマチュア無線について</strong></span><span class="record-meta">UPDATED 2025<i style="--integrity:89%"></i></span><b>→</b></a>
+          <a href="./pages/languages/bahasa_indonesia/index.html"><span class="record-num">NOTE_002</span><span class="record-icon">字</span><span class="record-title"><small>LANGUAGE / TRAVEL</small><strong>インドネシア語について</strong></span><span class="record-meta">DRAFT NOTE<i style="--integrity:61%"></i></span><b>→</b></a>
+          <div class="corrupt"><span>NOTE_003</span><strong>次の記事を準備中</strong><small>[ COMING SOON ]</small></div>
+        </div>
       </div>
     </section>
 
-    <section class="section graph-section" id="map">
-      <div class="section-heading"><div><p class="eyebrow">03 / CONNECTIONS</p><h2>知識の地図</h2></div><p>ノードを選ぶとページを開けます。</p></div>
-      <div class="graph-shell">
-        <div class="graph-legend"><span><i class="dot product"></i>Product</span><span><i class="dot note"></i>Note</span><span><i class="dot topic"></i>Topic</span></div>
-        <div id="knowledge-graph" class="knowledge-graph" role="group" aria-label="ページと話題の関係図"></div>
+    <section class="network panel-section" id="network">
+      <div class="section-code"><span>03</span><small>CONTENT<br>CONNECTIONS</small></div>
+      <div class="section-main">
+        <div class="section-heading"><div><p>// CONTENT MAP</p><h2>CONNECTIONS</h2></div><span>7 RELATED<br>NODES</span></div>
+        <div class="graph-console"><div class="console-bar"><span>CONTENT_MAP</span><span>ACTIVE <i></i></span></div><div id="knowledge-graph" class="knowledge-graph" role="group" aria-label="ページと話題の関係図"></div><div class="console-footer"><span>● PRODUCT</span><span>◆ NOTE</span><span>○ TOPIC</span><b>CLICK A NODE TO OPEN</b></div></div>
       </div>
     </section>
   </main>
 
-  <footer><span>© 2026 masa-zehn</span><span>Built with curiosity in Tokyo <b>●</b></span></footer>
+  <footer><div><span class="brand-glyph">MZ</span><p>PERSONAL WEBSITE<br>MAINTAINED BY MASA-ZEHN</p></div><p>© 2026 MASA-ZEHN<br><a href="#">ページ上部へ ↑</a></p></footer>
 </body>
 </html>

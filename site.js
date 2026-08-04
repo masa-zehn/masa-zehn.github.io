@@ -14,7 +14,7 @@
   const ns = 'http://www.w3.org/2000/svg';
   const svg = document.createElementNS(ns,'svg');
   svg.setAttribute('aria-hidden','true');
-  svg.innerHTML = '<defs><marker id="arrowhead" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#aaa99f"/></marker></defs>';
+  svg.innerHTML = '<defs><marker id="arrowhead" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#56604d"/></marker></defs>';
   edges.forEach(([from,to]) => {
     const a=nodes.find(n=>n.id===from), b=nodes.find(n=>n.id===to);
     const line=document.createElementNS(ns,'line');
